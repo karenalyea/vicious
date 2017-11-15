@@ -7,24 +7,24 @@
 </head>
 
 <body>
-<h1>Welcome to Vicious Valet</h1>
-<h3>Home of the most Vicious Valet service in the country</h3>
+	<h1>Welcome to Vicious Valet</h1>
+	<h3>Home of the most Vicious Valet service in the country</h3>
 
+<div>
+	<div id="vicious">
+		<p> This is our mascot, Vicious the basset hound</p>
+ 	</div>
 
-<div id="hero">
-<p> This is our mascot, Vicious the basset hound</p>
-</div> 
-
-<div id="impStuff">
-	<form action="/" method="post">
-		<div>
-			<label> License Plate Number <input type="text"
+		<div id="impStuff">
+			<form action="/" method="post">
+			<div>
+				<label> License Plate Number <input type="text"
 				name="license">
-			</label>
-		</div>
-		<br>
+				</label>
+			</div>
+			<br>
 		<div>
-			<label> License Plate State <input type="text"
+		<label> License Plate State <input type="text"
 				name="licenseState">
 			</label>
 		</div>
@@ -47,10 +47,10 @@
 		<button>Add this car</button>
 	</form>
 
-	<p>The lot is full: {{ lot.isLotFull }}</p>
-	<p>The number of cars in the lot: {{ lot.size }}</p>
+		<p>There are/is {{ lot.size }} car(s) in the lot and the lot is full ( {{ lot.isLotFull }} )</p>
 
 	<!-- <p>The number of cars in the lot: {{ lot.carList.size }}</p> -->
+</div>
 </div>
 
 	<table>
@@ -61,6 +61,7 @@
 				<th>Make</th>
 				<th>Model</th>
 				<th>Color</th>
+				<th>Remove?</th>
 			</tr>
 		</thead>
 		<tbody>

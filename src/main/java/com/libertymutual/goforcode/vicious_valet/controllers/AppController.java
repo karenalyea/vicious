@@ -23,6 +23,7 @@ public class AppController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("app");
 		mv.addObject("lot", carLot);
+		mv.setViewName("redirect:/");
 		return mv;
 	}
 

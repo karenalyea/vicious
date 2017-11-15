@@ -16,6 +16,7 @@ public class Lot {
 	
 	public void removeCarFromLot(int index) {
 		carList.remove(index-1);
+	
 	}
 	
 	public int size() {
