@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+<title>Vicious Valet</title>
+  <link rel="stylesheet" href="vicious.css" />
+</head>
+
+<body>
+<h1>Welcome to Vicious Valet</h1>
+<h3>Home of the most Vicious Valet service in the country</h3>
+
+
+<div id="hero">
+<p> This is our mascot, Vicious the basset hound</p>
+</div> 
+
+<div id="impStuff">
+	<form action="/" method="post">
+		<div>
+			<label> License Plate Number <input type="text"
+				name="license">
+			</label>
+		</div>
+		<br>
+		<div>
+			<label> License Plate State <input type="text"
+				name="licenseState">
+			</label>
+		</div>
+		<br>
+		<div>
+			<label> Color <input type="text" name="color">
+			</label>
+		</div>
+		<br>
+		<div>
+			<label> Make <input type="text" name="make">
+			</label>
+		</div>
+		<br>
+		<div>
+			<label> Model <input type="text" name="model">
+			</label>
+		</div>
+		<br>
+		<button>Add this car</button>
+	</form>
+
+	<p>The lot is full: {{ lot.isLotFull }}</p>
+	<p>The number of cars in the lot: {{ lot.size }}</p>
+
+	<!-- <p>The number of cars in the lot: {{ lot.carList.size }}</p> -->
+</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>License</th>
+				<th>State</th>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Color</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#lot.carList}}
+			<tr>
+				<td>{{ license }}</td>
+				<td>{{ licenseState }}</td>
+				<td>{{ make }}</td>
+				<td>{{ model }}</td>
+				<td>{{ color }}</td>
+				<td>
+					<form method="post" action="/remove">
+						<input type="hidden" name="carIndex" value="{{ -index }}">
+						<button>Remove from lot</button>
+					</form>
+				</td>
+			</tr>
+			{{/lot.carList}}
+		</tbody>
+	</table>
+
+
+</body>
+</html>
